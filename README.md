@@ -5,12 +5,12 @@ Each time that new code is pushed into your repo, you can have a [pylint](https:
 Example workflow:
 * Put the following text into a file named `.github/main.workflow` in your repo):
 ```hcl
-workflow "GitHub Action for pylint" {
+workflow "on push" {
   on = "push"
-  resolves = ["pylint command"]
+  resolves = ["GitHub Action for pylint"]
 }
 
-action "pylint command" {
+action "GitHub Action for pylint" {
   uses = "cclauss/GitHub-Action-for-pylint@master"
   args = "pylint"
 }
