@@ -1,9 +1,9 @@
-workflow "GitHub Action for pylint" {
+workflow "on push" {
   on = "push"
-  resolves = ["pylint command"]
+  resolves = ["GitHub Action for pylint"]
 }
 
-action "pylint command" {
+action "GitHub Action for pylint" {
   uses = "cclauss/GitHub-Action-for-pylint@master"
   args = "pylint --help"
 }
