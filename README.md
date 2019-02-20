@@ -1,6 +1,6 @@
 # GitHub Action for running pylint commands
 
-Also see: PyCQA/pylint#2758
+Also see: https://github.com/PyCQA/pylint/pull/2758
 
 Each time that new code is pushed into your repo, you can have a [pylint](https://docs.pylint.org) command automatically run.
 
