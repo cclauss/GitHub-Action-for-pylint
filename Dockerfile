@@ -5,8 +5,7 @@ LABEL "com.github.actions.description"="Run pylint commands"
 LABEL "com.github.actions.icon"="upload-cloud"
 LABEL "com.github.actions.color"="green"
 
-RUN apk add --no-cache bash
-RUN apk add build-base gcc
+RUN apk add --no-cache bash gcc
 RUN pip install --upgrade pip
 RUN pip install pylint
 RUN python --version ; pip --version ; pylint --version
