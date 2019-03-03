@@ -7,7 +7,7 @@ LABEL "com.github.actions.color"="green"
 
 RUN apk add --no-cache bash gcc
 RUN pip install --upgrade pip
-RUN pip install pylint==2.3.0
+RUN pip install pylint==2.2.2
 RUN python --version ; pip --version ; pylint --version
 
 COPY entrypoint.sh /
