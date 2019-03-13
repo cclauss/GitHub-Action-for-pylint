@@ -14,7 +14,7 @@ workflow "on push" {
 
 action "GitHub Action for pylint" {
   uses = "cclauss/GitHub-Action-for-pylint@master"
-  args = "pip install -r requirements.txt ; pylint"
+  args = "pip install -r requirements.txt ; pylint **/*.py"
 }
 ```
 Or to add other pylint options to __args =__ above.
