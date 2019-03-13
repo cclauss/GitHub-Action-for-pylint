@@ -17,7 +17,13 @@ action "GitHub Action for pylint" {
   args = "pip install -r requirements.txt ; pylint **/*.py"
 }
 ```
-Or to add other pylint options to __args =__ above.
+The __args__ parameter above will probably have to be modified to suit each project's needs.
+
+For instance, Pylint will raise errors like ___E0401: Unable to import 'requests' (import-error)___ if a project's imports have not been pip installed.  It is therefor useful to place a __pip__ or __pipenv__ command _before_ the __pylint__ command separated with a semicolon (;).  Some examples:
+* __args = "pip install -r requirements.txt ; pylint \*\*/*.py"__  # for projects that use _requirements.txt_ files
+* __args = "pip install . ; pylint \*\*/*.py"__  # for projects that put their dependencies in _setup.py_
+
+Or to add other pylint options to the __args =__ parameter to suit project needs.
 
 $ __pylint -h__
 ```
