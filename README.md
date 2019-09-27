@@ -4,20 +4,9 @@ Also see: https://github.com/PyCQA/pylint/pull/2758
 
 Each time that new code is pushed into your repo, you can have a [pylint](https://docs.pylint.org) command automatically run.
 
-Example workflow:
-* Put the following text into a file named `.github/main.workflow` in your repo):
-```hcl
-workflow "on push" {
-  on = "push"
-  resolves = ["GitHub Action for pylint"]
-}
+    args = "pip install -r requirements.txt ; pylint **/*.py"
 
-action "GitHub Action for pylint" {
-  uses = "cclauss/GitHub-Action-for-pylint@master"
-  args = "pip install -r requirements.txt ; pylint **/*.py"
-}
-```
-The __args__ parameter above will probably have to be modified to suit each project's needs.
+The __args__ parameter should probably have to be modified to suit each project's needs.
 
 For instance, Pylint will raise errors like ___E0401: Unable to import 'requests' (import-error)___ if a project's imports have not been pip installed.  It is therefor useful to place a __pip__ or __pipenv__ command _before_ the __pylint__ command separated with a semicolon (;).  Some examples:
 * __args = "pip install -r requirements.txt ; pylint \*\*/*.py"__  # for projects that use _requirements.txt_ files
