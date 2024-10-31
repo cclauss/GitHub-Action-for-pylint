@@ -1,4 +1,4 @@
-FROM python:3.9-alpine
+FROM python:3.13-bookworm
 
 LABEL "com.github.actions.name"="GitHub Action for pylint"
 LABEL "com.github.actions.description"="Run pylint commands"
