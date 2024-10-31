@@ -1,3 +1,8 @@
+### Archiving this repo in favor https://github.com/astral-sh/ruff-action
+with the command `ruff check --select=PL --output-format=github`
+
+---
+
 # GitHub Action for running pylint commands
 
 Also see: https://github.com/PyCQA/pylint/pull/2758
